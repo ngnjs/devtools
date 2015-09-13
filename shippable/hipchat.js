@@ -22,7 +22,7 @@ args.color = args.color || 'yellow';
 args.success = args.success || "true";
 args.success = args.success === "true";
 
-var app = require(path.join(process.cwd(),'src','manifest.json');
+var app = require(path.join(process.cwd(),'src','manifest.json'));
 
 var msg = app.name+" v"+app.version+": <a href=\""+process.env.BUILD_URL+"\">Build "+process.env.BUILD_NUMBER+"</a> of "
         + "<a href=\""+process.env.REPOSITORY_URL.replace('ssh://git@','https://').replace('.git','')+"\"><b>"+process.env.REPO_NAME+"</b> ("+process.env.BRANCH+" branch)</a> "
