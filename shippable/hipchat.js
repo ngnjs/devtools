@@ -3,7 +3,8 @@
  * It is not designed to be used directly in a worker script.
  */
 var HipChat = require('node-hipchat'),
-    hc = new HipChat(process.env.HIPCHAT_TOKEN);
+    hc = new HipChat(process.env.HIPCHAT_TOKEN),
+    path = require('path');
 
 // Remove first arguments (node and script)
 process.argv.shift();
