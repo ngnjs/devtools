@@ -1,0 +1,27 @@
+language: node_js
+node_js:
+  - 0.12.7
+
+env:
+- secure: ZzPftOvhqm1e60naTIc79P2jFZUjceOFUCbCwjnTGmhqMjaF0dW7dH5FGjpv2LecZUVp9kHHoQQ7uq3ZqDc1Huaaxp4dKr0x5mLleJfsa1EZIq+hBYMp6n3VkhjkMFJq2RutyVSEzgbxfxQpIJ1SPDp8wonvZKKVZq+ll1RlMiDhXxOneYn0um7egNNBoa8vR317LdnfERNiGcEM7nk02gL699mh3L2w4VfoM3pE3zOaKvDQUqHStzPCJ3ZLTullD4nEB1y18+TuDQgJ28UxuCJTth8CDtUYk7RdkqzGXwapscFvGuakxtOGwsdWP/0+uG700irfALop1LZNk6IGtUuPvVK+ra49IhsXiuTM1hZjSJwR52d8EjFaab+g/vsy4mHEaIuHN6unAC0ZxB8y/jOulo41Ep+30yr6dscTtmVHOjQjG58Hvd/SIR7H6E/Mq6Iyu5ObLI3ogeUvOUp/L1rYawXogfElhzyjU+JqfKaL18u3FFpxGZIMa8vGc5N9I5ETnUACj6/Slc5ZdESjXnsk5/2nWyuZJj+YNN3KdPkvXtFm3J1lqOJHf7tU+SYQWzxez6gbBoxVg1UsEjjk/FzbwNvpTgQGEwz0hcedyFpRLDzKwgrORC98TOdwhO/gPpkOLiRPr+Z7rSW+K1vWd3DeTFtDwTP/ceeaW6grPsST43upe1PXe1oddUOWNfX8SCSUkgvOLvak5dzauCDE5f2pYwJBoJI9MuXZnq4Z6HdKMD6W0SSIZ545uNEkC6nMTFXR0CR1DA8zB9D2GVl6O6MQhrnAVAG1VMeq/aFBdfhxqqW2Kfns8s+b7qDgBUTuhsjcUd35uZ/wDxs52FxkS4xgBpwrDf3bwQ35tgI5q4wQb6DcC0OR5tV+a1HtMnbh7v8rVLbe3hEZuVI/moZtqKRlbQR+C+f3wtU+wibNXC0pL9aX/jTzi23gQm/aknLyXla+PwfZVKvmoo4pAfrlhaCzy6k8CFpf8VxWHxK7eKdqlF1laA9C0D60K8gD9voE
+
+branches:
+  only:
+  - release
+
+install:
+- npm install node-hipchat
+- npm install
+
+script:
+- npm start
+
+after_success:
+- node ./shippable/hipchat.js --success true
+
+after_failure:
+- node ./shippable/hipchat.js --success false
+
+notifications:
+  email:
+  - corey@coreybutler.com

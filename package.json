@@ -1,0 +1,27 @@
+{
+  "name": "ngn-devtools",
+  "version": "1.0.0",
+  "description": "NGN Devtools for Chrome",
+  "main": "build.js",
+  "directories": {
+    "test": "test"
+  },
+  "scripts": {
+    "start": "node build.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "devtools",
+    "ngn"
+  ],
+  "author": "Corey Butler <corey@coreybutler.com>",
+  "license": "All Rights Reserved.",
+  "dependencies": {
+    "archiver": "^0.15.1",
+    "aws-sdk": "^2.2.0",
+    "googleapis": "^2.1.3",
+    "musthave": "^1.0.1",
+    "request": "^2.61.0",
+    "wrench": "^1.5.8"
+  }
+}

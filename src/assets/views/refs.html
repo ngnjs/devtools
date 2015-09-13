@@ -1,0 +1,20 @@
+<table>
+  <thead>
+    <tr>
+      <th>
+        Name
+      </th>
+      <th>
+        Selector
+      </th>
+    </tr>
+  </thead>
+  <tbody>
+    {{#list}}
+    <tr reference="ref.{{name}}">
+      <td><span></span><span>ref.</span>{{name}}</td>
+      <td><code>{{selector}}</code></td>
+    </tr>
+    {{/list}}
+  </tbody>
+</table>

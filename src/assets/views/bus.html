@@ -1,0 +1,24 @@
+<table>
+  <thead>
+    <tr>
+      <th>
+        Subscribers
+      </th>
+      <th>
+        Persistent
+      </th>
+      <th>
+        Adhoc
+      </th>
+    </tr>
+  </thead>
+  <tbody>
+    {{#list}}
+    <tr{{#if wildcard}} class="wildcard"{{/if}}>
+      <td><span></span>{{name}}</td>
+      <td>{{persist}}</td>
+      <td>{{adhoc}}</td>
+    </tr>
+    {{/list}}
+  </tbody>
+</table>

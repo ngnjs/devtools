@@ -1,0 +1,228 @@
+html, body {
+  padding: 0;
+  margin: 0;
+}
+
+body > nav:first-of-type {
+  display: flex;
+  padding: 2px 4px 0px 4px;
+  max-height: 18px;
+  /*background: -webkit-gradient(linear, left top, left bottom, from(rgb(236, 236, 236)), to(rgb(217, 217, 217)));*/
+  background: #EEEEEE;
+  border-bottom: 1px solid rgb(163, 163, 163);
+}
+
+body.unaware > nav:first-of-type {
+  display: none;
+}
+
+body > nav:first-of-type > a {
+  font-family: Helvetica, sans-serif;
+  text-decoration: none;
+  color: #303942;
+  border: 1px solid transparent;
+  border-bottom: 0 !important;
+  padding: 2px 6px 6px 6px !important;
+}
+
+body > nav:first-of-type > a:hover {
+  cursor: default;
+}
+
+body > nav:first-of-type > a.active {
+  border: 1px solid rgb(163, 163, 163);
+  background-color: #FFFFFF !important;
+}
+
+/*body.unaware > #refs {
+  display: flex;
+  flex: 1 1 auto;
+  height: 100%;
+  self-align: center;
+  align-items: center;
+  justify-content: center;
+  font-size: 30px;
+}*/
+
+body > section {
+  display: none !important;
+}
+
+body > section.active {
+  display: flex !important;
+}
+
+body > #refs {
+  display: flex;
+  flex: 1 1 auto;
+}
+
+table {
+  width: 100%;
+  border-spacing: 0;
+  border-collapse: collapse;
+  border-top: 0 !important;
+}
+
+table > thead {
+  margin: 0;
+  padding: 0;
+  background: -webkit-gradient(linear, left top, left bottom, from(rgb(236, 236, 236)), to(rgb(217, 217, 217)));
+}
+
+table > thead > tr, table > thead > tr > th,
+table > tbody > tr > td {
+  margin: 0;
+  padding: 2px 6px;
+  border: 1px solid rgb(217, 217, 217)
+}
+
+table > thead > tr > th {
+  text-align: left;
+  border-top: 0;
+  border-bottom: 1px solid rgb(163, 163, 163);
+}
+
+table > thead > tr > th:first-child {
+  width: 25%;
+  max-width: 25%;
+}
+
+table > tbody > tr:nth-of-type(even) {
+  background-color: #F2F2F2;
+  transition: background-color .3s;
+}
+
+table > tbody > tr > td {
+  padding: 6px;
+  vertical-align: top;
+}
+
+table > tbody > tr:hover {
+  background-color: #DDEEFF;
+  transition: background-color .1s;
+}
+
+#refs > table > tbody > tr.collapsed > td > code + div > li > code,
+#refs > table > tbody > tr.expanded > td > code + div > li > code,
+table > tbody > tr > td > code {
+  font-family: Monaco, Consolas, 'Courier New';
+  cursor: default;
+  border-bottom: 1px solid transparent;
+}
+
+table > tbody > tr > td:last-of-type > code:hover {
+  border-bottom: 1px dotted #999999;
+}
+
+table > tbody > tr > td:first-of-type > span:nth-child(2) {
+  color: #999999;
+}
+
+#refs > table > tbody > tr > td > span:first-of-type {
+  position: relative;
+  width: 16px !important;
+  height: 16px !important;
+  margin: 2px 8px;
+}
+
+#refs > table > tbody > tr > td > span:first-of-type:after {
+  position: absolute;
+  content: ' ';
+  top: 3px;
+  left: -4px;
+  font-size: 0;
+  line-height: 0;
+  margin: 0 0 16px 0;
+}
+
+#refs > table > tbody > tr.collapsed > td > span:first-of-type:after {
+  border-bottom: 4px solid transparent;  /* left arrow slant */
+  border-top: 4px solid transparent; /* right arrow slant */
+  border-left: 6px solid #6E6E6E; /* bottom, add background color here */
+}
+#refs > table > tbody > tr.expanded > td > span:first-of-type:after {
+  top: 4px;
+  border-right: 4px solid transparent;  /* left arrow slant */
+  border-left: 4px solid transparent; /* right arrow slant */
+  border-top: 6px solid #6E6E6E; /* bottom, add background color here */
+}
+
+#refs > table > tbody > tr.collapsed > td > code + div {
+  display: none;
+}
+#refs > table > tbody > tr.expanded > td > code + div {
+  position: relative;
+  display: block;
+  clear: both;
+  padding: 13px 9px;
+  border-top: 1px dotted #D9D9D9;
+  background-color: rgba(0,0,0,.01);
+  margin: 2px -6px -6px -6px;
+}
+#refs > table > tbody > tr.expanded > td > code + div:before {
+  position: absolute;
+  top: 2px;
+  left: 8px;
+  content: 'Additional Elements:';
+  color: rgba(0,0,0,.2);
+  text-shadow: 1px 1px 1px rgba(255,255,255,.2);
+  font-size: 9px;
+}
+#refs > table > tbody > tr.expanded > td > code + div > li > code {
+  color: #666666;
+  font-size: smaller;
+}
+#refs > table > tbody > tr.expanded > td > code + div > li {
+  list-style-type: square;
+}
+#refs > table > tbody > tr.expanded > td > code + div > li > code:hover {
+  border-bottom: 1px dotted rgba(0,0,0,.2);
+}
+table > tbody > tr > td:first-child {
+  position: relative;
+}
+
+table > tbody > tr.wildcard > td:first-child {
+  font-style: italic;
+}
+
+table > tbody > tr.wildcard > td:first-child:after {
+  position: absolute;
+  right: 10px;
+  width: 10px;
+  height: 10px;
+  content: 'W';
+  border-radius: 30em;
+  background-color: #efefef;/*#A2DED0*/
+  border: 1px solid #ccc;
+  color: #999;
+  padding: 3px;
+  font-size: 8px;
+  text-align: center;
+  vertical-align: middle;
+  line-height: 10px;
+}
+
+#refs > table > tbody > tr.expanded > td:first-child:after,
+#refs > table > tbody > tr.collapsed > td:first-child:after {
+  position: absolute;
+  right: 10px;
+  width: 10px;
+  height: 10px;
+  content: attr(data-items);
+  border-radius: 30em;
+  background-color: #efefef;
+  border: 1px solid #ccc;
+  color: #999;
+  padding: 3px;
+  font-size: 8px;
+  text-align: center;
+  vertical-align: middle;
+  line-height: 10px;
+}
+#refs > table > tbody > tr.expanded > td:first-child:after {
+  color: #ccc;
+  background-color: rgba(0,0,0,.01);
+  border: 1px solid rgba(0,0,0,.05);
+}

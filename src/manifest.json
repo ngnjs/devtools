@@ -1,0 +1,23 @@
+{
+  "name": "NGN",
+  "version": "0.0.3",
+  "manifest_version": 2,
+  "minimum_chrome_version": "33.0",
+  "description": "Devtools panel for NGN Chassis development.",
+  "options_page": "options.html",
+  "devtools_page": "devtools.html",
+  "background": {
+    "scripts": ["lib/background.js"]
+  },
+  "content_security_policy": "script-src 'self' 'unsafe-eval'; object-src 'self'",
+  "permissions": [
+    "tabs",
+    "webNavigation",
+    "<all_urls>"
+  ],
+  "icons": {
+     "16": "assets/images/logo_16x16.png",
+     "48": "assets/images/logo_48x48.png",
+    "128": "assets/images/logo_128x128.png"
+  }
+}
