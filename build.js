@@ -48,10 +48,6 @@ s3.getObject({
     Key: process.env.AWS_S3_GOOGLE_APP_FILEPATH
   }, function (err2, keyfilecontent) {
 
-    // Copy the key to the release directory
-    console.log('Copying private key for distribution...');
-    keyfilecontent.pipe(fs.createWriteStream(path.join(dist,'key.pem'));
-
     // Remove any existing distribution/release directory
     console.log('Cleaning up distribution directories...');
     if (fs.existsSync(dist)){
@@ -61,6 +57,10 @@ s3.getObject({
     if (fs.existsSync(path.join(src,'ngn.zip'))){
       fs.unlinkSync(path.join(src,'ngn.zip'));
     }
+
+    // Copy the key to the release directory
+    console.log('Copying private key for distribution...');
+    fs.writeFileSync(path.join(dist,'key.pem'),keyfilecontent.Body);
 
     // Copy the release to the distribution directory
     console.log('Copying source files...')
