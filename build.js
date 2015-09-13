@@ -65,10 +65,6 @@ s3.getObject({
     // exclude: regexpOrFunction // An exclude filter (either a regexp or a function)
   });
 
-  var app = require(path.join(dist,'manifest.json');
-  process.env.APP_NAME = app.name;
-  process.env.APP_VERSION = app.version;
-
   // Copy the key to the release directory
   console.log('Copying private key for distribution...');
   fs.createReadStream(path.join(src,'..','key.pem')).pipe(fs.createWriteStream(path.join(dist,'key.pem')));
