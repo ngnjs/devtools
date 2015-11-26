@@ -146,12 +146,12 @@ s3.getObject({
 
     // Begin archiving file (zip)
     archive.on('error', function(err){
-        throw err;
+      throw err;
     });
 
     archive.pipe(output);
     archive.bulk([
-        { expand: true, cwd: dist, src: ['**'], dest: 'ngn' }
+      { expand: true, cwd: dist, src: ['**'], dest: 'ngn' }
     ]);
     archive.finalize();
 

@@ -23,7 +23,7 @@ chrome.devtools.panels.create("NGN",
         });
 
         // Update the panel ref content
-        chrome.devtools.inspectedWindow.eval("ref", function(ref, isException){
+        chrome.devtools.inspectedWindow.eval("NGN.ref", function(ref, isException){
           if (!isException){
             console.log(ref.json);
             currentPanel.updateReferences(ref.json);
@@ -33,7 +33,7 @@ chrome.devtools.panels.create("NGN",
         });
 
         // Update the panel ref content
-        chrome.devtools.inspectedWindow.eval("BUS", function(bus, isException){
+        chrome.devtools.inspectedWindow.eval("NGN.BUS", function(bus, isException){
           if (!isException){
             currentPanel.updateBUS(bus);
           } else {
@@ -73,14 +73,14 @@ chrome.devtools.panels.elements.createSidebarPane(
 
         // Ghetto hack to expand the height of the sidebar appropriately.
         setTimeout(function () {
-          chrome.devtools.inspectedWindow.eval('ref.json', function (res, isException) {
+          chrome.devtools.inspectedWindow.eval('NGN.ref.json', function (res, isException) {
             if (!isException){
               var refCount = Object.keys(res).length;
               var height = refCount*30; // Account for each row
 
               // Get any expanded references
               Object.keys(res).forEach(function(ref) {
-                chrome.devtools.inspectedWindow.eval('ref.'+ref+'.length', function(val,isE) {
+                chrome.devtools.inspectedWindow.eval('NGN.ref.'+ref+'.length', function(val,isE) {
                   if (val !== undefined){
                     height += (val*18); // Account for expanded rows
                   }
@@ -90,6 +90,7 @@ chrome.devtools.panels.elements.createSidebarPane(
               setTimeout(function () {
                 height += 30; // account for header space & buffer
                 sidebar.setHeight(height+'px');
+                // sidebar.setHeight('100vh')
               },200);
             } else {
               port.postMessage(JSON.stringify(isException));

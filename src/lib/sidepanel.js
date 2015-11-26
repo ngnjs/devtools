@@ -1,4 +1,4 @@
-chrome.devtools.inspectedWindow.eval("ref.json", function(ref, isException){
+chrome.devtools.inspectedWindow.eval("NGN.ref.json", function(ref, isException){
   if (!isException){
     chrome.devtools.inspectedWindow.eval("document.body.classList.remove('unaware')", function(res, isException){
       if (!isException){
