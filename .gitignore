@@ -1,0 +1,9 @@
+.*
+_*
+*.pem
+!.gitignore
+dist
+node_modules
+env.json
+*.log
+
