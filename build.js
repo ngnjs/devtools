@@ -133,8 +133,8 @@ s3.getObject({
               process.exit(0);
             }
           }
-          if (data.error){
-            console.log(data.error.errors[0].message);
+          if (data.itemError){
+            console.log(data.itemError[0].error_detail);
           }
           fs.unlinkSync('ngn.zip');
           wrench.rmdirSyncRecursive(dist, true);
