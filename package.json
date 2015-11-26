@@ -1,6 +1,6 @@
 {
   "name": "ngn-devtools",
-  "version": "1.0.0",
+  "version": "0.0.4",
   "description": "NGN Devtools for Chrome",
   "main": "build.js",
   "directories": {
